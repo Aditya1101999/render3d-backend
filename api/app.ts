@@ -11,6 +11,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/server/v1', generate3dRouter);
-const handler = app;
+const PORT = process.env.PORT || 3001;
 
-export default handler;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+export default app;
