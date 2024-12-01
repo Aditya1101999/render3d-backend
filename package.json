@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node api/app.ts",
-    "build": "prisma generate && node dist/app.js"
+    "build": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
