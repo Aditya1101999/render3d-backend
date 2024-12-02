@@ -2,7 +2,7 @@ import prisma from '../db';
 
 interface PromptData {
   prompt: string;
-  output: string;
+  output: string[];
 }
 
 export async function savePrompt(data: PromptData): Promise<{ id: number; prompt: string; output: string } | null> {
@@ -15,7 +15,10 @@ export async function savePrompt(data: PromptData): Promise<{ id: number; prompt
     }
 
     const newPrompt = await prisma.prompt.create({
-      data
+      data: {
+        prompt: data.prompt,
+        output: data.output[0], 
+      },
     });
 
     return newPrompt;
