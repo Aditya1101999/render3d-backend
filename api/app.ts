@@ -12,8 +12,9 @@ app.get('/', (req, res) => {
 
 app.use('/server/v1', generate3dRouter);
 const PORT = 4000;
+const HOST = '0.0.0.0';
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST , () => {
   console.log(`Server is running on port ${PORT}`);
 });
 export default app;
