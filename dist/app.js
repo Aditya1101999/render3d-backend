@@ -13,5 +13,8 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 app.use('/server/v1', generate3dRoute_1.default);
-const handler = app;
-exports.default = handler;
+const PORT = 4000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+exports.default = app;
