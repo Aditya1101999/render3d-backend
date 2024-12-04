@@ -14,7 +14,7 @@ generate3dRouter.post('/generate-3d', async (req,res): Promise<any> => {
     try {
         const response = await generate3D(prompt);
         if (response.status === 200) {
-            
+            console.log(response)
             const outputUrl = response.data.output[0];
             console.log(outputUrl)
             const savedPrompt = await savePrompt({ prompt, output: outputUrl });
